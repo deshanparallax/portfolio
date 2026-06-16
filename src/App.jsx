@@ -1,225 +1,214 @@
 import React from 'react';
-import { Mail, ExternalLink, ChevronRight, Code2, Server, Terminal, Award } from 'lucide-react';
+import { Mail, ExternalLink, ChevronRight, Award } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import profilePic from './assets/profile.png';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-indigo-500/30">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-slate-950/70 border-b border-slate-800/50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="font-bold text-xl tracking-tighter bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
-            Deshan.dev
+    <div className="min-h-screen bg-[#0d1423] text-slate-200 font-sans selection:bg-cyan-500/30">
+      {/* Centered Navigation */}
+      <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-[#0d1423]/80 border-b border-slate-800/50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-center">
+          <div className="flex items-center space-x-2 md:space-x-4 text-sm font-medium text-slate-400">
+            <a href="#about" className="text-slate-100 bg-slate-800/80 px-5 py-1.5 rounded-full transition-colors">Hero</a>
+            <a href="#skills" className="hover:text-slate-200 hover:bg-slate-800/40 px-5 py-1.5 rounded-full transition-colors">Skills</a>
+            <a href="#projects" className="hover:text-slate-200 hover:bg-slate-800/40 px-5 py-1.5 rounded-full transition-colors">Projects</a>
+            <a href="#impact" className="hover:text-slate-200 hover:bg-slate-800/40 px-5 py-1.5 rounded-full transition-colors">Content</a>
+            <a href="#contact" className="hover:text-slate-200 hover:bg-slate-800/40 px-5 py-1.5 rounded-full transition-colors">Contact</a>
           </div>
-          <div className="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-            <a href="#about" className="hover:text-cyan-400 transition-colors">About</a>
-            <a href="#skills" className="hover:text-cyan-400 transition-colors">Skills</a>
-            <a href="#projects" className="hover:text-cyan-400 transition-colors">Projects</a>
-            <a href="#impact" className="hover:text-cyan-400 transition-colors">Impact</a>
-          </div>
-          <a href="#contact" className="px-4 py-2 text-sm font-semibold rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-all">
-            Let's Talk
-          </a>
         </div>
       </nav>
 
-      <main className="pt-24 pb-16 px-6 lg:px-8 max-w-7xl mx-auto space-y-32 md:space-y-40">
-        {/* Hero Section */}
-        <section id="about" className="min-h-[80vh] flex flex-col justify-center relative">
-          {/* Decorative blur */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-500/20 blur-[120px] rounded-full pointer-events-none" />
+      <main className="pt-28 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-24 md:space-y-32">
+        
+        {/* Dashboard Hero Section */}
+        <section id="about" className="relative z-10 flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           
-          <div className="relative z-10 max-w-3xl space-y-8">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-900/80 border border-slate-800 text-sm font-medium text-cyan-400 mb-4">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-              <span>Available for new opportunities</span>
+          {/* Left Column: Image with Glowing Border */}
+          <div className="w-full lg:w-[45%] shrink-0">
+            <div className="relative aspect-[4/3] rounded-[2rem] bg-slate-900 overflow-hidden shadow-[0_0_50px_rgba(34,211,238,0.25)] border-[3px] border-cyan-400 flex items-center justify-center group">
+              
+              {/* Fallback Icon visible through transparent placeholder */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-700 bg-[#0d1423] z-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-user mb-2 opacity-50">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                </svg>
+                <span className="text-[10px] uppercase tracking-widest font-bold opacity-30 text-center px-4">Replace src/assets/profile.png</span>
+              </div>
+
+              <img 
+                src={profilePic} 
+                alt="Deshan Hettiarachchi" 
+                className="w-full h-full object-cover relative z-10 transition-transform duration-700 group-hover:scale-[1.02]"
+              />
             </div>
-            
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight">
-              Associate Software Engineer <span className="block text-slate-500">&</span>
-              <span className="bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                Tech Educator.
-              </span>
-            </h1>
-            
-            <p className="text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl">
-              I specialize in shifting shipping velocity using agentic workflows and robust architectures. 
-              With over 3 years of experience in Full-Stack & DevOps, I build resilient systems that 
-              slash operational costs and maximize efficiency.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <a href="#projects" className="inline-flex justify-center items-center px-6 py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold transition-all">
-                View Projects
-                <ChevronRight className="ml-2 w-4 h-4" />
+          </div>
+
+          {/* Right Column: Text & Metrics Dashboard */}
+          <div className="flex-1 w-full space-y-8">
+            <div className="space-y-2">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-slate-100 tracking-tight mb-4">
+                Deshan Hettiarachchi
+              </h1>
+              <p className="text-slate-200 text-lg md:text-xl">
+                Associate Software Engineer | Full-Stack & DevOps
+              </p>
+              <p className="text-slate-400 text-sm md:text-base">
+                Tech Content Creator | Problem Solver | AI Advocate
+              </p>
+            </div>
+
+            {/* Action Buttons Row */}
+            <div className="flex flex-wrap gap-3">
+              <a href="#projects" className="px-6 py-2.5 rounded-full bg-cyan-900/10 border border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.2)] text-slate-100 font-medium hover:bg-cyan-900/30 transition-all text-sm">
+                Explore Projects
               </a>
-              <a href="#" className="inline-flex justify-center items-center px-6 py-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-100 font-semibold border border-slate-700 transition-all">
+              <a href="#" className="px-6 py-2.5 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 font-medium hover:bg-slate-800 transition-all text-sm">
                 Download Resume
               </a>
+              <a href="#contact" className="px-6 py-2.5 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 font-medium hover:bg-slate-800 transition-all text-sm">
+                Contact Me
+              </a>
+            </div>
+
+            {/* Metrics Dashboard Row */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 pt-2">
+              
+              <div className="md:col-span-1 bg-slate-800/40 border border-slate-700/50 rounded-[1.25rem] p-5 hover:border-slate-600 transition-colors">
+                <div className="text-xl md:text-2xl font-bold text-slate-100 mb-1">14,100+</div>
+                <div className="text-xs text-slate-300 mb-1">Followers</div>
+                <div className="text-[10px] text-slate-500">@deshonlineLK</div>
+              </div>
+
+              <div className="md:col-span-1 bg-slate-800/40 border border-slate-700/50 rounded-[1.25rem] p-5 hover:border-slate-600 transition-colors">
+                <div className="text-xl md:text-2xl font-bold text-slate-100 mb-1">313,000+</div>
+                <div className="text-xs text-slate-300">Views</div>
+              </div>
+
+              <div className="md:col-span-2 bg-gradient-to-br from-slate-800/60 to-slate-800/20 border border-slate-700/50 rounded-[1.25rem] p-5 flex items-center gap-4 hover:border-slate-600 transition-colors">
+                <div className="w-12 h-12 shrink-0 bg-yellow-500/10 rounded-full flex items-center justify-center text-yellow-400">
+                  <Award className="w-7 h-7" />
+                </div>
+                <div>
+                  <div className="text-[10px] text-slate-400 mb-1 tracking-wider uppercase">December 2024</div>
+                  <div className="text-sm md:text-base font-bold text-slate-100">Star Performer Award</div>
+                  <div className="text-xs text-slate-500">Parallax Technologies</div>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
 
-        {/* Skills Dashboard */}
-        <section id="skills" className="space-y-12 relative z-10">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-100">Technical Arsenal</h2>
-            <p className="text-slate-400">The tools and frameworks I use to bring ideas to life.</p>
+        {/* Skills Section */}
+        <section id="skills" className="space-y-6">
+          <h2 className="text-2xl font-semibold text-slate-100">Skills</h2>
+          <div className="flex flex-wrap gap-2.5 max-w-5xl">
+            {[
+              "Laravel", "Vue.js", "Node.js", "Inertia.js", "React", "JavaScript", 
+              "Tailwind CSS", "Jenkins CI/CD", "Linux", "DigitalOcean", "PostgreSQL", 
+              "MySQL", "Cursor Pro", "Agentic Workflows"
+            ].map((skill, index) => (
+              <span key={index} className="px-4 py-2 bg-slate-800/30 border border-slate-700/50 rounded-full text-slate-300 text-sm hover:border-slate-500 hover:bg-slate-800/50 transition-colors cursor-default">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        {/* Projects Highlights Section */}
+        <section id="projects" className="space-y-6">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl font-semibold text-slate-100">Project Highlights</h2>
+            <a href="#projects" className="flex items-center gap-1 px-4 py-1.5 bg-slate-800/50 border border-slate-700/50 rounded-lg text-sm text-slate-300 hover:text-slate-100 hover:bg-slate-800 transition-colors">
+              See All <ChevronRight className="w-4 h-4" />
+            </a>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Backend & Frameworks */}
-            <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/50 backdrop-blur-sm hover:border-slate-700 transition-all">
-              <div className="w-12 h-12 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6">
-                <Code2 className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Backend & Frameworks</h3>
-              <ul className="space-y-3 text-slate-400">
-                <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mr-3" /> Laravel</li>
-                <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mr-3" /> Node.js</li>
-                <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mr-3" /> Vue.js</li>
-                <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mr-3" /> Inertia.js</li>
-              </ul>
-            </div>
-
-            {/* DevOps & Cloud */}
-            <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/50 backdrop-blur-sm hover:border-slate-700 transition-all">
-              <div className="w-12 h-12 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-6">
-                <Server className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4">DevOps & Cloud</h3>
-              <ul className="space-y-3 text-slate-400">
-                <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mr-3" /> Jenkins CI/CD</li>
-                <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mr-3" /> Linux Administration</li>
-                <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mr-3" /> DigitalOcean</li>
-                <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mr-3" /> PostgreSQL / MySQL</li>
-              </ul>
-            </div>
-
-            {/* AI-Assisted Ecosystems */}
-            <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/50 backdrop-blur-sm hover:border-slate-700 transition-all">
-              <div className="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6">
-                <Terminal className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4">AI-Assisted Ecosystems</h3>
-              <ul className="space-y-3 text-slate-400">
-                <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-3" /> Cursor Pro</li>
-                <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-3" /> Google Antigravity Pro</li>
-                <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-3" /> Prompt Engineering</li>
-                <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-3" /> Agentic Workflows</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Featured Projects Grid */}
-        <section id="projects" className="space-y-12 relative z-10">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-100">Featured Projects</h2>
-            <p className="text-slate-400">Real-world solutions engineered for scale and efficiency.</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Project 1 */}
-            <div className="group rounded-2xl bg-slate-900/40 border border-slate-800/50 overflow-hidden hover:border-slate-700 transition-all">
-              <div className="p-8 space-y-6">
-                <div className="flex justify-between items-start">
-                  <div className="space-y-2">
-                    <h3 className="text-2xl font-bold text-slate-100 group-hover:text-indigo-400 transition-colors">Curfox Courier Management</h3>
-                    <p className="text-slate-400 leading-relaxed">
-                      Enterprise courier management system spearheading core optimizations. Implemented robust CI/CD pipelines dropping server operational costs and maximizing overall delivery efficiency.
-                    </p>
-                  </div>
-                  <a href="#" className="p-2 bg-slate-800/50 hover:bg-slate-700 rounded-lg text-slate-300 transition-colors">
-                    <ExternalLink className="w-5 h-5" />
-                  </a>
-                </div>
-                
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 text-xs font-medium rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Laravel</span>
-                  <span className="px-3 py-1 text-xs font-medium rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Jenkins</span>
-                  <span className="px-3 py-1 text-xs font-medium rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Linux</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 2 */}
-            <div className="group rounded-2xl bg-slate-900/40 border border-slate-800/50 overflow-hidden hover:border-slate-700 transition-all">
-              <div className="p-8 space-y-6">
-                <div className="flex justify-between items-start">
-                  <div className="space-y-2">
-                    <h3 className="text-2xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">School Management System</h3>
-                    <p className="text-slate-400 leading-relaxed">
-                      A standalone comprehensive school management platform built entirely from scratch, focusing on seamless user experience, fast navigation, and secure data handling.
-                    </p>
-                  </div>
-                  <a href="#" className="p-2 bg-slate-800/50 hover:bg-slate-700 rounded-lg text-slate-300 transition-colors">
-                    <ExternalLink className="w-5 h-5" />
-                  </a>
-                </div>
-                
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 text-xs font-medium rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Laravel</span>
-                  <span className="px-3 py-1 text-xs font-medium rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Vue.js</span>
-                  <span className="px-3 py-1 text-xs font-medium rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Inertia.js</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Community Impact */}
-        <section id="impact" className="relative z-10">
-          <div className="rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 p-8 md:p-12 overflow-hidden relative">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 blur-[80px] rounded-full pointer-events-none" />
+          <div className="grid lg:grid-cols-2 gap-6">
             
-            <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
-              <div className="space-y-6">
-                <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-sm font-medium text-amber-400">
-                  <Award className="w-4 h-4" />
-                  <span>Star Performer Award · Dec 2024</span>
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                  Empowering the Community at <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-pink-500">@deshonlineLK</span>
-                </h2>
-                <p className="text-slate-400 text-lg">
-                  Beyond writing code, I am deeply passionate about tech education. I create content 
-                  that simplifies complex tech concepts, reaching thousands of aspiring developers.
-                </p>
+            {/* Curfox Window Card */}
+            <div className="rounded-[1.25rem] bg-[#111827] border border-slate-700/50 overflow-hidden flex flex-col group hover:border-cyan-500/30 transition-all shadow-lg">
+              <div className="h-10 bg-[#1f2937]/50 border-b border-slate-800/60 flex items-center px-4 space-x-2 shrink-0">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
               </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-6 rounded-2xl bg-slate-950/50 border border-slate-800 text-center">
-                  <div className="text-4xl font-extrabold text-cyan-400 mb-2">14.1k+</div>
-                  <div className="text-sm font-medium text-slate-400 uppercase tracking-wider">Followers</div>
+              
+              <div className="p-6 md:p-8 flex-1 flex flex-col font-mono text-sm">
+                <div className="flex justify-between items-start mb-6 font-sans">
+                  <h3 className="text-lg font-semibold text-slate-100 group-hover:text-cyan-400 transition-colors">Curfox Courier Management</h3>
+                  <a href="#" className="text-slate-500 hover:text-cyan-400 transition-colors">
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
                 </div>
-                <div className="p-6 rounded-2xl bg-slate-950/50 border border-slate-800 text-center">
-                  <div className="text-4xl font-extrabold text-indigo-400 mb-2">313k+</div>
-                  <div className="text-sm font-medium text-slate-400 uppercase tracking-wider">Views</div>
+                
+                <div className="text-slate-400 space-y-2 mb-8 flex-1 leading-relaxed text-xs md:text-sm">
+                  <p><span className="text-pink-400">const</span> <span className="text-blue-400">project</span> = <span className="text-yellow-300">"Core Optimization"</span>;</p>
+                  <p><span className="text-pink-400">function</span> <span className="text-green-400">deploy</span>() {'{'}</p>
+                  <p className="pl-4">setupJenkinsPipelines();</p>
+                  <p className="pl-4">dropServerCosts();</p>
+                  <p className="pl-4">maximizeDeliveryEfficiency();</p>
+                  <p>{'}'}</p>
+                </div>
+                
+                <div className="flex flex-wrap gap-2 font-sans mt-auto">
+                  <span className="px-3 py-1 text-[11px] font-semibold rounded-full bg-slate-800 text-slate-300 border border-slate-700/50">Laravel</span>
+                  <span className="px-3 py-1 text-[11px] font-semibold rounded-full bg-slate-800 text-slate-300 border border-slate-700/50">Jenkins</span>
+                  <span className="px-3 py-1 text-[11px] font-semibold rounded-full bg-slate-800 text-slate-300 border border-slate-700/50">PostgreSQL</span>
                 </div>
               </div>
             </div>
+
+            {/* School System App Card */}
+            <div className="rounded-[1.25rem] bg-[#111827] border border-slate-700/50 overflow-hidden flex flex-col group hover:border-indigo-500/30 transition-all shadow-lg">
+              <div className="h-10 bg-[#1f2937]/50 border-b border-slate-800/60 flex items-center px-4 space-x-2 shrink-0">
+                <div className="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
+              </div>
+              
+              <div className="p-6 md:p-8 flex-1 flex flex-col">
+                <div className="flex justify-between items-start mb-6">
+                  <h3 className="text-lg font-semibold text-slate-100 group-hover:text-indigo-400 transition-colors">School Management System</h3>
+                  <a href="#" className="text-slate-500 hover:text-indigo-400 transition-colors">
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+                
+                <p className="text-slate-400 leading-relaxed text-sm mb-8 flex-1">
+                  A standalone comprehensive platform built entirely from scratch, focusing on seamless user experience, fast navigation, and secure data handling for educational institutes.
+                </p>
+                
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  <span className="px-3 py-1 text-[11px] font-semibold rounded-full bg-slate-800 text-slate-300 border border-slate-700/50">Laravel</span>
+                  <span className="px-3 py-1 text-[11px] font-semibold rounded-full bg-slate-800 text-slate-300 border border-slate-700/50">Vue.js</span>
+                  <span className="px-3 py-1 text-[11px] font-semibold rounded-full bg-slate-800 text-slate-300 border border-slate-700/50">Inertia.js</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </section>
 
       </main>
 
-      {/* Footer / Contact */}
-      <footer id="contact" className="border-t border-slate-800/50 bg-slate-950">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      {/* Contact Footer */}
+      <footer id="contact" className="border-t border-slate-800/50 bg-[#0d1423] py-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
-            <div className="font-bold text-xl tracking-tighter text-slate-100 mb-2">Deshan.dev</div>
-            <p className="text-slate-500 text-sm">© {new Date().getFullYear()} H.A.H.D. Hettiarachchi. All rights reserved.</p>
+            <div className="font-bold text-xl tracking-tighter text-slate-200 mb-1">Deshan.dev</div>
+            <p className="text-slate-500 text-xs font-medium">© {new Date().getFullYear()} H.A.H.D. Hettiarachchi.</p>
           </div>
           
-          <div className="flex items-center space-x-4">
-            <a href="mailto:contact@example.com" className="p-2.5 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/30 transition-all">
+          <div className="flex items-center space-x-6">
+            <a href="mailto:contact@example.com" className="text-slate-400 hover:text-cyan-400 transition-colors" aria-label="Email">
               <Mail className="w-5 h-5" />
             </a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer" className="p-2.5 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-indigo-400 hover:border-indigo-500/30 transition-all">
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-cyan-400 transition-colors" aria-label="LinkedIn">
               <FaLinkedin className="w-5 h-5" />
             </a>
-            <a href="https://github.com/yourprofile" target="_blank" rel="noreferrer" className="p-2.5 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-slate-100 hover:border-slate-600 transition-all">
+            <a href="https://github.com/yourprofile" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-cyan-400 transition-colors" aria-label="GitHub">
               <FaGithub className="w-5 h-5" />
             </a>
           </div>

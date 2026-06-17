@@ -1,10 +1,22 @@
 import React from 'react';
 import { Mail, Phone } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 export default function Footer() {
+  const container = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 1, ease: "easeOut" } }
+  };
+
   return (
-    <footer className="border-t border-slate-800/50 bg-[#0d1117] py-8">
+    <motion.footer 
+      variants={container}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="border-t border-slate-800/50 bg-[#0d1117] py-8"
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="text-center md:text-left">
           <div className="font-bold text-xl tracking-tighter text-white mb-2">Deshan Hettiarachchi</div>
@@ -26,6 +38,6 @@ export default function Footer() {
           </a>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

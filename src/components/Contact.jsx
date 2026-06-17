@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, CheckCircle, AlertCircle } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 export default function Contact() {
   const [formStatus, setFormStatus] = useState('idle'); // 'idle', 'submitting', 'success', 'error'
@@ -37,8 +38,20 @@ export default function Contact() {
     }, 5000);
   };
 
+  const container = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  };
+
   return (
-    <section id="contact" className="py-20 border-t border-slate-800/50 bg-[#111620]">
+    <motion.section 
+      id="contact" 
+      variants={container}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+      className="py-20 border-t border-slate-800/50 bg-[#111620]"
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center md:text-left mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Let's Work Together</h2>
@@ -133,6 +146,6 @@ export default function Contact() {
 
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

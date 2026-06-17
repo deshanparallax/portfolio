@@ -5,11 +5,11 @@ import SocialImpact from './components/SocialImpact';
 import TechnicalArsenal from './components/TechnicalArsenal';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
-import Certifications from './components/Certifications';
 import Education from './components/Education';
 import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import BackToTop from './components/BackToTop';
 
 export default function App() {
   return (
@@ -29,31 +29,29 @@ export default function App() {
           <Experience />
         </div>
 
-        <div className="animate-fade-in-up mt-8 pt-4 border-t border-slate-800/50" style={{ animationDelay: '0.2s' }}>
+        <div className="mt-8 pt-4 border-t border-slate-800/50">
+          <Projects />
+        </div>
+
+        <div className="pt-16 border-t border-slate-800/50">
+          <Achievements />
+        </div>
+
+        <div className="pt-16 border-t border-slate-800/50">
           <SocialImpact />
         </div>
         
-        <div className="animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-          <Projects />
-        </div>
-        
-        <div className="border-t border-slate-800/50 pt-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <Certifications />
-        </div>
-        
-        <div className="animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+        <div className="pt-16 border-t border-slate-800/50">
           <Education />
-        </div>
-
-        <div className="animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-          <Achievements />
         </div>
       </main>
 
-      <div className="animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
+      <div>
         <Contact />
         <Footer />
       </div>
+
+      <BackToTop />
     </div>
   );
 }

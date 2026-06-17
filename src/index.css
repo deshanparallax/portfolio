@@ -11,6 +11,11 @@
     animation: fade-in-up 0.8s ease-out forwards;
     opacity: 0;
   }
+  
+  .hidden-cursor::after {
+    display: none !important;
+    content: none !important;
+  }
 }
 
 @keyframes fade-in-up {

@@ -1,5 +1,5 @@
 {
-  "name": "my-portfolio",
+  "name": "deshan-hettiarachchi-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -18,8 +18,7 @@
     "lucide-react": "^1.18.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
-    "react-icons": "^5.6.0",
-    "react-type-animation": "^3.2.0"
+    "react-icons": "^5.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -33,6 +32,7 @@
     "gh-pages": "^6.3.0",
     "globals": "^17.6.0",
     "postcss": "^8.5.15",
+    "sharp": "^0.35.1",
     "tailwindcss": "^4.3.1",
     "vite": "^8.0.12"
   }

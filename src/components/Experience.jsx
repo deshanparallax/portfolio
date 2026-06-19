@@ -64,9 +64,42 @@ export default function Experience() {
                   <span className="hidden sm:block text-slate-600">•</span>
                   <span className="text-slate-400 text-sm">Aug 2024 - Present</span>
                 </div>
-                <p className="text-slate-400 text-sm md:text-base leading-relaxed">
-                  Driving full-stack solutions, leading backend architectures, and optimizing CI/CD workflows for enterprise applications. Spearheaded core system optimizations, reducing server costs and improving performance. Awarded the 'Star Performer Award' (Dec 2024).
-                </p>
+                <div className="text-slate-400 text-sm md:text-base leading-relaxed space-y-3 mt-4">
+                  <p className="font-medium text-slate-300 mb-2">Key Contributions & Achievements:</p>
+                  <ul className="space-y-2.5">
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-cyan-500 font-bold mt-0.5">▹</span>
+                      <span>Spearheaded full-stack frontend and backend development for the Curfox Courier Management System utilizing Laravel and Vue.js.</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-cyan-500 font-bold mt-0.5">▹</span>
+                      <span>Engineered core system optimizations for a massive database exceeding 50 million records, drastically improving application performance and scalability.</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-cyan-500 font-bold mt-0.5">▹</span>
+                      <span>Implemented advanced database strategies, including table partitioning, strategic indexing, and automated data archiving, to optimize data retrieval and reduce storage overhead.</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-cyan-500 font-bold mt-0.5">▹</span>
+                      <span>Integrated Redis caching and robust queue management to offload server processing, ensuring smooth execution of heavy background tasks.</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-cyan-500 font-bold mt-0.5">▹</span>
+                      <span>Refactored resource-heavy Eloquent ORM queries into optimized raw SQL, significantly reducing query execution time and lowering server-side operational costs.</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-cyan-500 font-bold mt-0.5">▹</span>
+                      <span>Orchestrated end-to-end sprint production releases and managed Linux staging environments, ensuring seamless deployments via Jenkins and custom CI/CD pipelines.</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-cyan-500 font-bold mt-0.5">▹</span>
+                      <span>Administered highly available production databases, ensuring 99.9% uptime and secure data integrity.</span>
+                    </li>
+                  </ul>
+                  <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 text-xs font-bold uppercase rounded shadow-inner">
+                    🏆 Awarded 'Star Performer Award' (Dec 2024)
+                  </div>
+                </div>
               </div>
             </motion.div>
 

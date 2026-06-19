@@ -53,10 +53,21 @@ export default function Education() {
                   </div>
                 </div>
 
-                <div className="pt-2">
-                  <p className="text-slate-300 leading-relaxed border-l-2 border-cyan-500/30 pl-4 group-hover:border-cyan-400 transition-colors">
-                    <span className="font-semibold text-slate-200">Specialized in:</span> Software Engineering, Web Technologies, and Advanced Database Management.
-                  </p>
+                <div className="pt-4 space-y-4">
+                  <div className="text-slate-300 leading-relaxed border-l-2 border-cyan-500/50 pl-4 group-hover:border-cyan-400 transition-colors">
+                    <span className="font-bold text-white block mb-1">Degree Classification:</span>
+                    <span className="text-slate-400 text-sm md:text-base">Successfully completed the 3-year degree program with a Second Class (Lower Division) and a solid CGPA of 3.13.</span>
+                  </div>
+                  
+                  <div className="text-slate-300 leading-relaxed border-l-2 border-blue-500/50 pl-4 group-hover:border-blue-400 transition-colors">
+                    <span className="font-bold text-white block mb-1">Academic Excellence:</span>
+                    <span className="text-slate-400 text-sm md:text-base">Achieved 'A' grades in critical technical modules, including Advanced Database Systems, Web Development, and Project Work.</span>
+                  </div>
+
+                  <div className="text-slate-300 leading-relaxed border-l-2 border-purple-500/50 pl-4 group-hover:border-purple-400 transition-colors">
+                    <span className="font-bold text-white block mb-1">Key Coursework:</span>
+                    <span className="text-slate-400 text-sm md:text-base">Software Engineering, Data Structures and Algorithms, Object-Oriented Programming, and Linux Administration.</span>
+                  </div>
                 </div>
 
                 {/* Certifications Sub-section */}

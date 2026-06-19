@@ -7,13 +7,13 @@ const projects = [
     title: "Curfox Courier Management System",
     description: "Enterprise-grade logistics and courier management platform tailored to maximize delivery dispatch efficiency.",
     contributions: [
-      { label: "CI/CD Integration", text: "Spearheaded the integration of automated CI/CD pipelines using Jenkins, ensuring rapid and error-free deployment cycles." },
-      { label: "System Optimization", text: "Led critical backend refactoring in Laravel, directly optimizing complex database queries and architectural patterns that significantly reduced server-side operational costs and improved application latency." },
-      { label: "Delivery Management", text: "Managed end-to-end features including dynamic dispatch routing, real-time parcel tracking logic, and automated delivery settlement modules." }
+      { label: "Database Optimization", text: "Architected database optimizations for 50M+ records using partitioning and Redis caching." },
+      { label: "CI/CD & Refactoring", text: "Integrated CI/CD pipelines, executed resource-heavy query refactoring, and lowered operational costs." },
+      { label: "Delivery Tracking", text: "Managed real-time delivery tracking updates, dynamic dispatch routing, and settlement modules." }
     ],
-    tech: ["Laravel", "Vue.js", "PostgreSQL/MySQL", "Jenkins"],
+    tech: ["Laravel", "Vue.js", "PostgreSQL/MySQL", "Redis", "Jenkins"],
     link: "https://demo.office.curfox.com/",
-    badge: "Featured Flagship",
+    badge: "Enterprise Project",
     colSpan: "lg:col-span-2"
   },
   {
@@ -36,7 +36,18 @@ const projects = [
     tech: ["Native PHP", "MySQL", "Bootstrap"],
     link: "#",
     badge: "Undergraduate Project",
-    colSpan: "lg:col-span-3"
+    colSpan: "lg:col-span-1"
+  },
+  {
+    title: "Store Management System – Kadahapola Ayurvedic",
+    description: "A specialized store management system designed for a commercial Ayurvedic business.",
+    contributions: [
+      { label: "Architecture & Workflows", text: "Architected backend logic, designed relational database schemas, and implemented core inventory tracking workflows." }
+    ],
+    tech: ["Native PHP", "MySQL", "HTML/CSS", "JavaScript"],
+    link: "#",
+    badge: "Undergraduate Group Project",
+    colSpan: "lg:col-span-2"
   }
 ];
 
@@ -86,17 +97,17 @@ export default function Projects() {
         {/* Left Arrow */}
         <button 
           onClick={() => scroll('left')}
-          className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-6 w-12 h-12 bg-[#151b23] hover:bg-cyan-500/20 text-slate-300 hover:text-cyan-400 rounded-full items-center justify-center shadow-lg backdrop-blur z-20 transition-all border border-slate-700 hover:border-cyan-400/50"
+          className="flex absolute left-1 md:left-0 top-1/2 -translate-y-1/2 md:-translate-x-4 lg:-translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-[#151b23]/80 md:bg-[#151b23] hover:bg-cyan-500/20 text-slate-300 hover:text-cyan-400 rounded-full items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.5)] backdrop-blur z-20 transition-all border border-slate-700 hover:border-cyan-400/50"
         >
-          <ChevronLeft className="w-6 h-6" />
+          <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
         </button>
 
         {/* Right Arrow */}
         <button 
           onClick={() => scroll('right')}
-          className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-6 w-12 h-12 bg-[#151b23] hover:bg-cyan-500/20 text-slate-300 hover:text-cyan-400 rounded-full items-center justify-center shadow-lg backdrop-blur z-20 transition-all border border-slate-700 hover:border-cyan-400/50"
+          className="flex absolute right-1 md:right-0 top-1/2 -translate-y-1/2 md:translate-x-4 lg:translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-[#151b23]/80 md:bg-[#151b23] hover:bg-cyan-500/20 text-slate-300 hover:text-cyan-400 rounded-full items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.5)] backdrop-blur z-20 transition-all border border-slate-700 hover:border-cyan-400/50"
         >
-          <ChevronRight className="w-6 h-6" />
+          <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
         </button>
 
         <div 
